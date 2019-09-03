@@ -1,11 +1,13 @@
 package com.example.activitytest;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,10 +63,11 @@ public class FirstActivity extends AppCompatActivity {
 //                intent.setData(Uri.parse("tel:10086"));
 
 //               向下一个活动传递数据
-                String data="Hello SecondActivity";
+//                String data="Hello SecondActivity";
 //                putExtra()方法有两个参数，第一参数是键，第二参数是值
-                intent.putExtra("extra_data",data);
-                startActivity(intent);
+//                intent.putExtra("extra_data",data);
+//                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
     }
@@ -97,5 +100,20 @@ public class FirstActivity extends AppCompatActivity {
             default:
         }
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode)
+        {
+            case  1:
+                if(resultCode== RESULT_OK)
+                {
+                    String returnedData = data.getStringExtra("data_result");
+                    Log.i("FirstActivity", returnedData);
+                }
+                break;
+                default:
+        }
     }
 }
