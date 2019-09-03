@@ -14,7 +14,6 @@
             android:label="这是标题">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,7 +24,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.example.activitytest.MY_CATEGORY" />
             </intent-filter>
+        </activity>
 
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http"/>
+            </intent-filter>
         </activity>
 
     </application>

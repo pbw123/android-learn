@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -44,10 +45,22 @@ public class FirstActivity extends AppCompatActivity {
 //                使用隐式Intent
 //                使用另一个Intent构造函数，直接将actionf的字符串传入
 //                表明我们们想要启动能够响应com.example.activitytest.ACTION_START这个ation的活动
-                Intent intent = new Intent("com.example.activitytest.ACTION_START");
+//                Intent intent = new Intent("com.example.activitytest.ACTION_START");
 //                每个Intent只能指定一个action,但却可以指定多个category,现在来指定第二个(第一个是默认category)
-                intent.addCategory("com.example.activitytest.MY_CATEGORY");
+//                intent.addCategory("com.example.activitytest.MY_CATEGORY");
 //                startActivity()专门用于启动活动的，它接收一个Intent参数
+
+//                更多隐式Intent的用法
+//                调用系统的浏览器打开网页
+//                这里指定了Intent的action是Intent.ACTION_VIEW,这是Android系统的内置动作
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse("http://www.baidu.com"));
+//                调用系统的拨号界面
+//                Intent.ACTION_DIAL也是Android系统的内置动作
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+
+                intent.setData(Uri.parse("tel:10086"));
+
                 startActivity(intent);
             }
         });
