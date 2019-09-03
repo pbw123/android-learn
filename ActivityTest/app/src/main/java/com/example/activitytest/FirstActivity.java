@@ -40,7 +40,7 @@ public class FirstActivity extends AppCompatActivity {
 //                Intent的这个构造函数接收两个参数，
 //                第一个参数：要求提供一个启动活动的上下文
 //                第二个参数：指定想要启动的目标活动
-//                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
 
 //                使用隐式Intent
 //                使用另一个Intent构造函数，直接将actionf的字符串传入
@@ -57,10 +57,13 @@ public class FirstActivity extends AppCompatActivity {
 //                intent.setData(Uri.parse("http://www.baidu.com"));
 //                调用系统的拨号界面
 //                Intent.ACTION_DIAL也是Android系统的内置动作
-                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:10086"));
 
-                intent.setData(Uri.parse("tel:10086"));
-
+//               向下一个活动传递数据
+                String data="Hello SecondActivity";
+//                putExtra()方法有两个参数，第一参数是键，第二参数是值
+                intent.putExtra("extra_data",data);
                 startActivity(intent);
             }
         });
