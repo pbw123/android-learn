@@ -35,11 +35,18 @@ public class FirstActivity extends AppCompatActivity {
 //                销毁一个活动
 //                finish();
 
-//                使用Intent在活动之间穿梭
+//                使用显式Intent在活动之间穿梭
 //                Intent的这个构造函数接收两个参数，
 //                第一个参数：要求提供一个启动活动的上下文
 //                第二个参数：指定想要启动的目标活动
-                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+//                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+
+//                使用隐式Intent
+//                使用另一个Intent构造函数，直接将actionf的字符串传入
+//                表明我们们想要启动能够响应com.example.activitytest.ACTION_START这个ation的活动
+                Intent intent = new Intent("com.example.activitytest.ACTION_START");
+//                每个Intent只能指定一个action,但却可以指定多个category,现在来指定第二个(第一个是默认category)
+                intent.addCategory("com.example.activitytest.MY_CATEGORY");
 //                startActivity()专门用于启动活动的，它接收一个Intent参数
                 startActivity(intent);
             }
