@@ -7,25 +7,20 @@
     tools:context=".MainActivity"
     android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/input_message"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:text="Button 1"/>
+        android:layout_weight="1"
+        />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/send"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="Button 2"/>
+        android:layout_weight="1"
+        android:text="Send"/>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="Button 2"/>
+
 
 </LinearLayout>
