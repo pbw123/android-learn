@@ -3,6 +3,7 @@ package com.example.uiwidgettest;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -54,25 +55,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                progressBar.setProgress(progress);
 
 //                AlertDialog的学习
-                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle("This is Title");
-                dialog.setMessage("This is Message");
-//                可否用Back键关闭对话框
-                dialog.setCancelable(false);
-//                设置确定按钮的点击事件
-                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-//                设置取消按钮的点击事件
-                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-//                将对话框显示出来
-                dialog.show();
+//                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+//                dialog.setTitle("This is Title");
+//                dialog.setMessage("This is Message");
+////                可否用Back键关闭对话框
+//                dialog.setCancelable(false);
+////                设置确定按钮的点击事件
+//                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                    }
+//                });
+////                设置取消按钮的点击事件
+//                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                    }
+//                });
+////                将对话框显示出来
+//                dialog.show();
+
+//                ProgressDialog的学习
+                ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+                progressDialog.setTitle("This is ProgressDialog");
+                progressDialog.setMessage("This is Message");
+                progressDialog.setCancelable(true);
+                progressDialog.show();
                 break;
             default:
                 break;
