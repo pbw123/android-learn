@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,10 +19,12 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView fruitImage;
         TextView fruitName;
+        View fruitView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 //            分别获取到布局中的ImageView和TextView实例
+            fruitView=itemView;
             fruitImage = itemView.findViewById(R.id.fruit_image);
             fruitName = itemView.findViewById(R.id.fruit_name);
         }
@@ -37,7 +40,25 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
 //        把fruit_item布局加载进来
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent, false);
 //        创建ViewHolder实例，并把加载进来的fruit_item传到构造函数
-        ViewHolder holder = new ViewHolder(view);
+       final ViewHolder holder = new ViewHolder(view);
+
+       holder.fruitView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               int position = holder.getAdapterPosition();
+               Fruit fruit = mFruitList.get(position);
+               Toast.makeText(view.getContext(),"You clicked view"+fruit.getName(),Toast.LENGTH_SHORT).show();
+           }
+       });
+
+       holder.fruitImage.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               int position = holder.getAdapterPosition();
+               Fruit fruit = mFruitList.get(position);
+               Toast.makeText(view.getContext(),"You clicked Image"+fruit.getName(),Toast.LENGTH_SHORT).show();
+           }
+       });
 //        返回ViewHolder实例
         return holder;
     }
