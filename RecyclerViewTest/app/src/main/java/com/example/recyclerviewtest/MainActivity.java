@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
 //        指定RecyclerView的布局方式，这里LinearLayoutManager是线性布局的意思，可以实现和ListView类似的效果
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        设置布局的排列方式，默认是纵向的，下面设置成横向的
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
 //        创建FruitAdapter实例，并把水果的数据传递到FruitAdapter的构造函数当中
         FruitAdapter adapter = new FruitAdapter(fruitList);
