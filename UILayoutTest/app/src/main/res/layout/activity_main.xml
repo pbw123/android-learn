@@ -11,6 +11,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="This is TextView"
+    android:layout_gravity="left"
     />
 
     <ImageView
@@ -18,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"
+        android:layout_gravity="right"
         />
 
 
