@@ -1,7 +1,9 @@
 package com.example.uiwidgettest;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,9 +49,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                }
 
 //                动态更新进度条进度
-                int progress = progressBar.getProgress();
-                progress=progress+10;
-                progressBar.setProgress(progress);
+//                int progress = progressBar.getProgress();
+//                progress=progress+10;
+//                progressBar.setProgress(progress);
+
+//                AlertDialog的学习
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("This is Title");
+                dialog.setMessage("This is Message");
+//                可否用Back键关闭对话框
+                dialog.setCancelable(false);
+//                设置确定按钮的点击事件
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+//                设置取消按钮的点击事件
+                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+//                将对话框显示出来
+                dialog.show();
                 break;
             default:
                 break;
