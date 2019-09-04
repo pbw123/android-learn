@@ -31,15 +31,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
+//                获取输入框的内容并用Toast显示
 //                String text = editText.getText().toString();
 //                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+
+//                更新图片
 //                imageView.setImageResource(R.drawable.image_2);
-                if (progressBar.getVisibility()==View.GONE)
-                {
-                    progressBar.setVisibility(View.VISIBLE);
-                }else {
-                    progressBar.setVisibility(View.GONE);
-                }
+
+//                进度条显示和隐藏来回切换
+//                if (progressBar.getVisibility()==View.GONE)
+//                {
+//                    progressBar.setVisibility(View.VISIBLE);
+//                }else {
+//                    progressBar.setVisibility(View.GONE);
+//                }
+
+//                动态更新进度条进度
+                int progress = progressBar.getProgress();
+                progress=progress+10;
+                progressBar.setProgress(progress);
                 break;
             default:
                 break;
