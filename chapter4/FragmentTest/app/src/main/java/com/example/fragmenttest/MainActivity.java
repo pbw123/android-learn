@@ -22,15 +22,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void replaceFragment(Fragment fragment) {
 //        通过getSupportFragmentManager()获取FragmentManager实例
-        FragmentManager fragmentManager = getSupportFragmentManager();
-//        开启一个事务
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-//        替换碎片
-        transaction.replace(R.id.right_layout, fragment);
-//        提交事务
-        transaction.commit();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+////        开启一个事务
+//        FragmentTransaction transaction = fragmentManager.beginTransaction();
+////        替换碎片
+//        transaction.replace(R.id.right_layout, fragment);
+////        提交事务
+//        transaction.commit();
     }
-
 
     @Override
     public void onClick(View view) {
