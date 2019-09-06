@@ -8,6 +8,7 @@
         android:id="@+id/news_title_fragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:name="com.example.fragmentbestproctice.NewsTitleFragment"
         android:layout_weight="1"/>
 
     <FrameLayout
